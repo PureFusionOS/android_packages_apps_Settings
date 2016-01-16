@@ -351,4 +351,7 @@
     <string name="show_cpu_info">Show CPU info</string>
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+
 </resources>

@@ -74,6 +74,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements On
     private static final String KEY_SCREEN_LOCKING_SOUNDS = "screen_locking_sounds";
     private static final String KEY_DOCKING_SOUNDS = "docking_sounds";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String KEY_SCREENSHOT_SOUND = "screenshot_sound";
     private static final String KEY_TOUCH_SOUNDS = "touch_sounds";
         private static final String KEY_VIBRATION_MODE_INDICATION = "vibration_mode_indication";
     private static final String KEY_VIBRATE_ON_TOUCH = "vibrate_on_touch";
@@ -121,6 +122,11 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements On
 
     private static final SettingPref PREF_VOLUME_ADJUST_SOUNDS = new SettingPref(
             TYPE_SYSTEM, KEY_VOLUME_ADJUST_SOUNDS, System.VOLUME_ADJUST_SOUNDS_ENABLED,
+            DEFAULT_ON) {
+    };
+
+    private static final SettingPref PREF_SCREENSHOT_SOUND = new SettingPref(
+            TYPE_SYSTEM, KEY_SCREENSHOT_SOUND, System.SCREENSHOT_SOUND,
             DEFAULT_ON) {
     };
 
@@ -203,6 +209,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements On
         PREF_SCREEN_LOCKING_SOUNDS,
         PREF_DOCKING_SOUNDS,
         PREF_VOLUME_ADJUST_SOUNDS,
+        PREF_SCREENSHOT_SOUND,
         PREF_TOUCH_SOUNDS,
         PREF_VIBRATION_MODE_INDICATION,
         PREF_VIBRATE_ON_TOUCH,
