@@ -313,4 +313,9 @@
     
     <!-- [CHAR LIMIT=100] Notification Importance slider: very low importance level description -->
     <string name="notification_importance_very_low">No full screen interruption, peeking, sound, or vibration. Show at the bottom of the notification list. Hide from lock screen.</string>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
+
 </resources>
