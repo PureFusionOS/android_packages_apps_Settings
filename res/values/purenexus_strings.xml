@@ -318,4 +318,7 @@
     <string name="cpu_info">CPU</string>
     <string name="mem_info">RAM</string>
 
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>

@@ -62,6 +62,7 @@ import static android.provider.Settings.Secure.CAMERA_GESTURE_DISABLED;
 import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 import static android.provider.Settings.Secure.WAKE_GESTURE_ENABLED;
+import static android.provider.Settings.System.POCKET_JUDGE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
@@ -89,6 +90,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
     private static final String KEY_TAP_TO_WAKE = "tap_to_wake";
+    private static final String KEY_POCKET_JUDGE = "pocket_judge";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_NIGHT_DISPLAY = "night_display";
@@ -154,6 +156,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mLiftToWakePreference;
     private PreferenceScreen mDozeFragment;
     private SwitchPreference mTapToWakePreference;
+    private SwitchPreference mPocketPreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
     private ContentObserver mAccelerometerRotationObserver =
@@ -257,6 +260,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             removePreference(KEY_TAP_TO_WAKE);
         }
+
+        mPocketPreference = (SwitchPreference) findPreference(KEY_POCKET_JUDGE);
+        mPocketPreference.setOnPreferenceChangeListener(this);
 
         if (isCameraGestureAvailable(getResources())) {
             mCameraGesturePreference = (SwitchPreference) findPreference(KEY_CAMERA_GESTURE);
@@ -442,6 +448,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mTapToWakePreference.setChecked(value != 0);
         }
 
+        if (mPocketPreference != null) {
+            int value = Settings.System.getInt(getContentResolver(), POCKET_JUDGE, 1);
+            mPocketPreference.setChecked(value != 0);
+        }
+
         // Update camera gesture #1 if it is available.
         if (mCameraGesturePreference != null) {
             int value = Settings.Secure.getInt(getContentResolver(), CAMERA_GESTURE_DISABLED, 0);
@@ -504,6 +515,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mTapToWakePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
+        }
+        if (preference == mPocketPreference) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(), POCKET_JUDGE, value ? 1 : 0);
         }
         if (preference == mCameraGesturePreference) {
             boolean value = (Boolean) objValue;
