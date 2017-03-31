@@ -217,6 +217,12 @@
             android:key="bluetooth_disable_absolute_volume"
             android:summary="@string/bluetooth_disable_absolute_volume_summary"
             android:title="@string/bluetooth_disable_absolute_volume" />
+
+        <SwitchPreference
+            android:key="bluetooth_enable_inband_ringing"
+            android:title="@string/bluetooth_enable_inband_ringing"
+            android:summary="@string/bluetooth_enable_inband_ringing_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory

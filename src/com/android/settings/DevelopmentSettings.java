@@ -26,6 +26,7 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.app.backup.IBackupManager;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothHeadset;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -207,6 +208,10 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             "bluetooth_disable_absolute_volume";
     private static final String BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_PROPERTY =
             "persist.bluetooth.disableabsvol";
+    private static final String BLUETOOTH_ENABLE_INBAND_RINGING_PROPERTY =
+                                    "persist.bluetooth.enableinbandringing";
+
+    private static final String BLUETOOTH_ENABLE_INBAND_RINGING_KEY = "bluetooth_enable_inband_ringing";
 
     private static final String INACTIVE_APPS_KEY = "inactive_apps";
 
@@ -320,6 +325,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private SwitchPreference mWifiAggressiveHandover;
     private SwitchPreference mMobileDataAlwaysOn;
     private SwitchPreference mBluetoothDisableAbsVolume;
+    private SwitchPreference mBluetoothEnableInbandRinging;
     private SwitchPreference mOtaDisableAutomaticUpdate;
     private SwitchPreference mWifiAllowScansWithTraffic;
     private SwitchPreference mStrictMode;
@@ -536,7 +542,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mWebViewProvider = addListPreference(WEBVIEW_PROVIDER_KEY);
         mWebViewMultiprocess = findAndInitSwitchPref(WEBVIEW_MULTIPROCESS_KEY);
         mBluetoothDisableAbsVolume = findAndInitSwitchPref(BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_KEY);
-
+        mBluetoothEnableInbandRinging = findAndInitSwitchPref(BLUETOOTH_ENABLE_INBAND_RINGING_KEY);
+        if (!BluetoothHeadset.isInbandRingingSupported(getContext())) {
+            removePreference(mBluetoothEnableInbandRinging);
+            mBluetoothEnableInbandRinging = null;
+        }
         mOverlayDisplayDevices = addListPreference(OVERLAY_DISPLAY_DEVICES_KEY);
         mSimulateColorSpace = addListPreference(SIMULATE_COLOR_SPACE);
         mUSBAudio = findAndInitSwitchPref(USB_AUDIO_KEY);
@@ -835,6 +845,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             updateColorTemperature();
         }
         updateBluetoothDisableAbsVolumeOptions();
+        updateBluetoothEnableInbandRingingOptions();
         updateForceAuthorizeSubstratumPackagesOptions();
     }
 
@@ -1577,6 +1588,19 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 mBluetoothDisableAbsVolume.isChecked() ? "true" : "false");
     }
 
+        if (mBluetoothEnableInbandRinging != null) {
+            updateSwitchPreference(mBluetoothEnableInbandRinging,
+                SystemProperties.getBoolean(BLUETOOTH_ENABLE_INBAND_RINGING_PROPERTY, false));
+        }
+    }
+
+    private void writeBluetoothEnableInbandRingingOptions() {
+        if (mBluetoothEnableInbandRinging != null) {
+            SystemProperties.set(BLUETOOTH_ENABLE_INBAND_RINGING_PROPERTY,
+                mBluetoothEnableInbandRinging.isChecked() ? "true" : "false");
+        }
+    }
+
     private void updateMobileDataAlwaysOnOptions() {
         updateSwitchPreference(mMobileDataAlwaysOn, Settings.Global.getInt(
                 getActivity().getContentResolver(),
@@ -2195,6 +2219,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             startBackgroundCheckFragment();
         } else if (preference == mBluetoothDisableAbsVolume) {
             writeBluetoothDisableAbsVolumeOptions();
+        } else if (preference == mBluetoothEnableInbandRinging) {
+            writeBluetoothEnableInbandRingingOptions();
         } else if (preference == mWebViewMultiprocess) {
             writeWebViewMultiprocessOptions();
         } else if (SHORTCUT_MANAGER_RESET_KEY.equals(preference.getKey())) {
