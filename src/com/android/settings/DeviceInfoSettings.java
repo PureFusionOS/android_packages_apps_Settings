@@ -40,6 +40,9 @@ import com.android.settings.search.Index;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.DeviceInfoUtils;
 import com.android.settingslib.RestrictedLockUtils;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,6 +73,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
+    private static final String KEY_FUSION_UPDATES = "fusion_updates";
     /**
      * For Search.
      */
@@ -163,6 +167,17 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_KERNEL_VERSION).setSummary(DeviceInfoUtils.getFormattedKernelVersion());
         setValueSummary(KEY_PURE_VERSION, "ro.pure.version");
         findPreference(KEY_PURE_VERSION).setEnabled(true);
+
+        boolean supported = false;
+        try {
+            supported = (getPackageManager().getPackageInfo("com.fusion.ota", 0).versionCode >= 0);
+        } catch (NameNotFoundException e) {
+ 
+        } if (!supported) {
+            findPreference(KEY_FUSION_UPDATES).setEnabled(false);
+        } else {
+            findPreference(KEY_FUSION_UPDATES).setEnabled(true);
+        }
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
