@@ -47,6 +47,15 @@
         android:shouldDisableView="false"
         android:summary="@string/device_info_default"
         android:title="@string/firmware_version" />
+	
+    <!-- OTA -->
+    <PreferenceScreen android:key="fusion_updates"
+        android:title="@string/fusionupdate_settings_title"
+        android:summary="@string/system_update_settings_list_item_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.fusion.ota"
+            android:targetClass="com.fusion.ota.activities.MainActivity" />
+    </PreferenceScreen>	
 
     <!-- Security patch level -->
     <PreferenceScreen
