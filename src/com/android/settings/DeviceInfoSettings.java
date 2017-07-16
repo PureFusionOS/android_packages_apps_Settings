@@ -74,6 +74,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_FUSION_UPDATES = "fusion_updates";
+    private static final String KEY_MOD_BUILD_COMPILER_GCC = "build_compiler_gcc";
+    private static final String KEY_MOD_BUILD_COMPILER_CLANG = "build_compiler_clang";
+    private static final String KEY_MOD_BUILD_COMPILER_SDCLANG = "build_compiler_sdclang";
     /**
      * For Search.
      */
@@ -167,6 +170,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_KERNEL_VERSION).setSummary(DeviceInfoUtils.getFormattedKernelVersion());
         setValueSummary(KEY_PURE_VERSION, "ro.pure.version");
         findPreference(KEY_PURE_VERSION).setEnabled(true);
+        setValueSummary(KEY_MOD_BUILD_COMPILER_GCC, "ro.build.fusion.gcc");
+        setValueSummary(KEY_MOD_BUILD_COMPILER_CLANG, "ro.build.fusion.clang");
+        setValueSummary(KEY_MOD_BUILD_COMPILER_SDCLANG, "ro.build.fusion.sdclang");
 
         boolean supported = false;
         try {
