@@ -15,6 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
         android:title="@string/about_settings">
 
         <!-- System update settings - launches activity
@@ -116,5 +117,23 @@
                 android:key="selinux_status"
                 android:title="@string/selinux_status"
                 android:summary="@string/selinux_status_enforcing"/>
+
+        <!-- GCC used -->
+        <Preference
+                android:key="build_compiler_gcc"
+                android:title="@string/build_compiler_gcc"
+                android:summary="@string/build_compiler_default" />
+
+        <!-- Clang used -->
+        <Preference
+                android:key="build_compiler_clang"
+                android:title="@string/build_compiler_clang"
+                android:summary="@string/build_compiler_default" />
+
+        <!-- SDClang used -->
+        <Preference
+                android:key="build_compiler_sdclang"
+                android:title="@string/build_compiler_sdclang"
+                android:summary="@string/build_compiler_default" />
 
 </PreferenceScreen>
