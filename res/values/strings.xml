@@ -2495,6 +2495,15 @@
     <string name="kernel_version">Kernel version</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_number">Build number</string>
+    <!-- About phone screen, GCC Compiler  [CHAR LIMIT=40] -->
+    <string name="build_compiler_gcc">GCC version</string>
+    <string name="build_compiler_default">Unknown</string>
+    <!-- About phone screen, CLANG Compiler  [CHAR LIMIT=40] -->
+    <string name="build_compiler_clang">Clang version</string>
+    <string name="build_compiler_default">Unknown</string>
+    <!-- About phone screen, SDCLANG Compiler  [CHAR LIMIT=40] -->
+    <string name="build_compiler_sdclang">SDClang version</string>
+    <string name="build_compiler_default">Unknown</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="selinux_status">SELinux status</string>
 

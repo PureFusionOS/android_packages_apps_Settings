@@ -38,6 +38,9 @@ import com.android.settings.deviceinfo.ManualPreferenceController;
 import com.android.settings.deviceinfo.PureVersionPreferenceController;
 import com.android.settings.deviceinfo.RegulatoryInfoPreferenceController;
 import com.android.settings.deviceinfo.SELinuxStatusPreferenceController;
+import com.android.settings.deviceinfo.GCCVersionPreferenceController;
+import com.android.settings.deviceinfo.ClangVersionPreferenceController;
+import com.android.settings.deviceinfo.SDClangVersionPreferenceController;
 import com.android.settings.deviceinfo.SafetyInfoPreferenceController;
 import com.android.settings.deviceinfo.SecurityPatchPreferenceController;
 import com.android.settings.deviceinfo.VendorVersionPreferenceController;
@@ -132,6 +135,9 @@ public class DeviceInfoSettings extends DashboardFragment implements Indexable {
         controllers.add(new SELinuxStatusPreferenceController(context));
         controllers.add(new SafetyInfoPreferenceController(context));
         controllers.add(new PureVersionPreferenceController(context));
+        controllers.add(new GCCVersionPreferenceController(context));
+        controllers.add(new ClangVersionPreferenceController(context));
+        controllers.add(new SDClangVersionPreferenceController(context));
         controllers.add(new VendorVersionPreferenceController(context));
         return controllers;
     }
