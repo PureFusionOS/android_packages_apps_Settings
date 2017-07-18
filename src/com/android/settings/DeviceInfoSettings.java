@@ -76,6 +76,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_FUSION_UPDATES = "fusion_updates";
     private static final String KEY_MOD_BUILD_COMPILER_GCC = "build_compiler_gcc";
     private static final String KEY_MOD_BUILD_COMPILER_CLANG = "build_compiler_clang";
+    private static final String KEY_MOD_BUILD_COMPILER_SDCLANG = "build_compiler_sdclang";
+    private static final String KEY_FUSION_LOGO = "ic_settings_fusion";
+    
     /**
      * For Search.
      */
@@ -172,6 +175,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_MOD_BUILD_COMPILER_GCC, "ro.build.fusion.gcc");
         setValueSummary(KEY_MOD_BUILD_COMPILER_CLANG, "ro.build.fusion.clang");
         setValueSummary(KEY_MOD_BUILD_COMPILER_SDCLANG, "ro.build.fusion.sdclang");
+        findPreference(KEY_FUSION_LOGO).setEnabled(true);
 
         boolean supported = false;
         try {

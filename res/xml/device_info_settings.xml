@@ -18,6 +18,13 @@
     android:title="@string/about_settings">
 
     <!-- Device status - launches activity -->
+    
+    <!-- PureFusionOS Logo Header -->
+    <PreferenceScreen android:key="ic_settings_fusion"
+            android:enabled="false"
+            android:shouldDisableView="false"
+            android:layout="@layout/ic_settings_fusion" />
+
     <!-- PureFusionOTA -->
     <PreferenceScreen android:key="fusion_updates"
         android:title="@string/fusionupdate_settings_title"
