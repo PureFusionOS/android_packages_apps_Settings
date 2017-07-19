@@ -40,6 +40,12 @@
         android:summary="@string/changelog_summary"
         android:fragment="com.android.settings.fusion.Changelog" />
 
+    <!-- PureFusionOS About -->
+    <PreferenceScreen
+        android:key="about_fusion"
+        android:fragment="com.android.settings.fusion.About"
+        android:title="@string/fusion_about"
+        android:summary="@string/fusion_about_summary" />
     <PreferenceScreen
         android:fragment="com.android.settings.deviceinfo.Status"
         android:key="status_info"

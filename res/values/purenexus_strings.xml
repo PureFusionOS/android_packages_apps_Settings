@@ -273,5 +273,41 @@
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
     <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
-    
+   
+   <!-- PureFusionOS ROM About Section --> 
+    <!-- PureFusionOS About -->
+    <string name="fusion_about">PureFusionOS info</string>
+    <string name="fusion_about_summary">Updates, useful links, developers and contributors</string>
+    <string name="fusion_useful">Useful links</string>
+    <!-- update notifications -->
+    <string name="fusion_updates">PureFusionOS update notifications</string>
+    <string name="update_dialog">Pick your notification service</string>
+    <string name="gplus_collection">Google+ collection</string>
+    <!-- social media -->
+    <string name="fusion_social">PureFusionOS on social media</string>
+    <string name="social_dialog">Follow PureFusionOS on social media</string>
+    <string name="gplus_community">Google+ community</string>
+    <!-- github -->
+    <string name="fusion_github">PureFusionOS GitHub Source</string>
+    <!-- donations -->
+    <string name="fusion_donate">Donate to support development</string>
+    <string name="donate_dialog">Donate: Owner/Co-Owners</string>
+    <string name="donate_elim">Eliminater74</string>
+    <string name="donate_tab">tabp0le</string>
+    <!-- developer/contributors -->
+    <string name="lead_dev">Lead developer</string>
+    <string name="contributors">Team members</string>
+    <!-- Eliminater74 -->
+    <string name="elim">Eliminater74</string>
+    <string name="elim_sum">PureFusionOS Owner/maintainer for HTC10</string>
+    <string name="elim_dialog">Follow Eliminater74</string>
+    <!-- tabp0le -->
+    <string name="tab">tabp0le</string>
+    <string name="tab_sum">PureFusionOS Owner/maintainer for HTC10</string>
+    <string name="tab_dialog">Follow tabp0le</string>    
+    <!-- possible profiles -->
+    <string name="gplus">Google+</string>
+    <string name="play_store">Play store</string>
+    <string name="twitter">Twitter</string>
+    <string name="xda">XDA-Developers</string>
 </resources>

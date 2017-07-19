@@ -242,4 +242,32 @@
         <item>4500</item>
         <item>5000</item>
     </string-array>
+    
+   <!-- update notifications -->
+   <string-array name="update_entries">
+         <item>@string/gplus_collection</item>
+   </string-array>
+   
+   <!-- Donations -->
+   <string-array name="donate_entries">
+         <item>@string/donate_elim</item>
+        <item>@string/donate_tab</item>
+   </string-array>
+ 
+   <!-- social media -->
+   <string-array name="social_entries">
+         <item>@string/gplus_community</item>
+        <item>@string/xda</item>
+   </string-array>
+
+   <!-- Eliminater74 profiles -->
+   <string-array name="elim_entries">
+        <item>@string/xda</item>
+   </string-array>
+
+   <!-- tabp0le profiles -->
+   <string-array name="tab_entries">
+        <item>@string/xda</item>
+   </string-array>
+   
 </resources>
