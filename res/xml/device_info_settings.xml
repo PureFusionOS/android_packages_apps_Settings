@@ -33,6 +33,12 @@
             android:targetPackage="com.fusion.ota"
             android:targetClass="com.fusion.ota.activities.MainActivity" />
     </PreferenceScreen>
+    
+    <!-- Changelog -->
+    <PreferenceScreen android:key="fusion_changelog"
+        android:title="@string/changelog_title"
+        android:summary="@string/changelog_summary"
+        android:fragment="com.android.settings.fusion.Changelog" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.deviceinfo.Status"

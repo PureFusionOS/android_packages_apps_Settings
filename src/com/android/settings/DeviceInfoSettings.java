@@ -78,6 +78,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MOD_BUILD_COMPILER_CLANG = "build_compiler_clang";
 	private static final String KEY_MOD_BUILD_COMPILER_SDCLANG = "build_compiler_sdclang";
 	private static final String KEY_FUSION_LOGO = "ic_settings_fusion";
+	private static final String KEY_FUSION_CHANGELOG = "fusion_changelog";
 	
     /**
      * For Search.
@@ -176,6 +177,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 		setValueSummary(KEY_MOD_BUILD_COMPILER_CLANG, "ro.build.fusion.clang");
 		setValueSummary(KEY_MOD_BUILD_COMPILER_SDCLANG, "ro.build.fusion.sdclang");
 		findPreference(KEY_FUSION_LOGO).setEnabled(true);
+		findPreference(KEY_FUSION_CHANGELOG).setEnabled(true);
 
         boolean supported = false;
         try {

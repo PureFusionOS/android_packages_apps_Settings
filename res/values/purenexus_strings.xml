@@ -261,6 +261,11 @@
     <string name="device_doze_title">Ambient display gestures</string>
     <string name="device_doze_summary">Set up extra gestures for ambient display mode</string>
     
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Since the last update</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    
     <!-- Selinux Switch -->
     <string name="selinux_switch_title">Selinux Switch options</string>
     <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
