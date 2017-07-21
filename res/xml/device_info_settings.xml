@@ -148,6 +148,18 @@
         android:shouldDisableView="false"
         android:summary="@string/device_info_default"
         android:title="@string/build_number" />
+
+    <!-- Device cpu info -->
+    <Preference android:key="fusion_device_cpu"
+        style="?android:preferenceInformationStyle"
+        android:title="@string/cpu_info"
+        android:summary="@string/device_info_default"/>
+
+    <!-- Device mem info -->
+    <Preference android:key="device_memory"
+        style="?android:preferenceInformationStyle"
+        android:title="@string/mem_info"
+        android:summary="@string/device_info_default"/>
         
     <!-- GCC used -->
     <Preference android:key="build_compiler_gcc"
@@ -178,17 +190,5 @@
         settings:allowDividerAbove="true"
         settings:allowDividerBelow="true" />
 
-    <!-- Device cpu info -->
-    <Preference android:key="fusion_device_cpu"
-        android:enabled="false"
-        android:shouldDisableView="false"
-        android:title="@string/cpu_info"
-        android:summary="@string/device_info_default"/>
-
-    <!-- Device mem info -->
-    <Preference android:key="device_memory"
-        style="?android:preferenceInformationStyle"
-        android:title="@string/mem_info"
-        android:summary="@string/device_info_default"/>
 
 </PreferenceScreen>
