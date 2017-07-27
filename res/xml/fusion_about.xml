@@ -42,7 +42,7 @@
             android:title="@string/fusion_github">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/PureFusionOS/manifestt" />
+                android:data="https://github.com/PureFusionOS/manifest" />
         </Preference>
 
     </PreferenceCategory>
