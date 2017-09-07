@@ -178,4 +178,7 @@ public class Settings extends SettingsActivity {
     public static class SystemDashboardActivity extends SettingsActivity {}
     public static class SupportDashboardActivity extends SettingsActivity {}
 
+    // PureFusion Additions.
+    public static class FusionReactorSettingsActivity extends SettingsActivity {}
+
 }
