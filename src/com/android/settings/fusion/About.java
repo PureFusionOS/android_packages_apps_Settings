@@ -76,7 +76,7 @@ public class About extends SettingsPreferenceFragment {
             builder.setTitle(R.string.social_dialog);
             builder.setItems(R.array.social_entries, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    String [] socialValues = {"https://forum.xda-developers.com/htc-10/development/rom-pure-nexus-mod-substratum-volte-t3611743",
+                    String [] socialValues = {"https://plus.google.com/communities/112250185941758695492",
 					"https://forum.xda-developers.com/htc-10/development/rom-pure-nexus-mod-substratum-volte-t3611743"};
                     Intent link = new Intent(Intent.ACTION_VIEW);
                     String item = socialValues[which];
@@ -119,7 +119,23 @@ public class About extends SettingsPreferenceFragment {
                     }
                 }
             });
-            builder.show();			
+            builder.show();
+        } else if (preference.getKey().equals("prstorero")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle(R.string.tab_dialog);
+            builder.setItems(R.array.tab_entries, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    String [] tabValues = {"https://forum.xda-developers.com/member.php?u=4255135"};
+                    Intent link = new Intent(Intent.ACTION_VIEW);
+                    String item = tabValues[which];
+                    link.setData(Uri.parse(item));
+                    try {
+                        startActivity(link);
+                    } catch (android.content.ActivityNotFoundException e) {
+                    }
+                }
+            });
+            builder.show();
         }
         return super.onPreferenceTreeClick(preference);
     }

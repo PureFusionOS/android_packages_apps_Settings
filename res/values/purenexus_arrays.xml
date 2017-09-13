@@ -270,4 +270,8 @@
         <item>@string/xda</item>
    </string-array>
    
+   <!-- prstorero profiles -->
+   <string-array name="prstorero_entries">
+        <item>@string/xda</item>
+   </string-array>
 </resources>

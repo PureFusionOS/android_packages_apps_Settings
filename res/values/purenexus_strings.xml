@@ -294,6 +294,9 @@
     <string name="fusion_social">PureFusionOS on social media</string>
     <string name="social_dialog">Follow PureFusionOS on social media</string>
     <string name="gplus_community">Google+ community</string>
+    <string name="install_stats">Install Stats</string>
+    <string name="fusion_website">Website</string>
+    <string name="fusion_forum">Forum</string> 
     <!-- github -->
     <string name="fusion_github">PureFusionOS GitHub Source</string>
     <!-- donations -->
@@ -302,7 +305,7 @@
     <string name="donate_elim">Eliminater74</string>
     <string name="donate_tab">tabp0le</string>
     <!-- developer/contributors -->
-    <string name="lead_dev">Lead developer</string>
+    <string name="lead_dev">Lead developers</string>
     <string name="contributors">Team members</string>
     <!-- Eliminater74 -->
     <string name="elim">Eliminater74</string>
@@ -312,12 +315,15 @@
     <string name="tab">tabp0le</string>
     <string name="tab_sum">PureFusionOS Owner/maintainer for HTC10</string>
     <string name="tab_dialog">Follow tabp0le</string>    
+    <!-- prstorero -->
+    <string name="prstorero">prstorero</string>
+    <string name="prstorero_sum">Developer</string>
+    <string name="prstorero_dialog">Follow prstorero</string>
     <!-- possible profiles -->
     <string name="gplus">Google+</string>
     <string name="play_store">Play store</string>
     <string name="twitter">Twitter</string>
     <string name="xda">XDA-Developers</string>
-    
     <!-- [CHAR LIMIT=100] Notification Importance slider: very low importance level description -->
     <string name="notification_importance_very_low">No full screen interruption, peeking, sound, or vibration. Show at the bottom of the notification list. Hide from lock screen.</string>
 
