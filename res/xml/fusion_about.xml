@@ -22,11 +22,6 @@
         android:title="@string/fusion_useful">
 
         <Preference
-            android:key="updates"
-            android:icon="@drawable/ic_update"
-            android:title="@string/fusion_updates" />
-
-        <Preference
             android:key="social"
             android:icon="@drawable/ic_social"
             android:title="@string/fusion_social" />
@@ -67,44 +62,17 @@
     </PreferenceCategory>
 
     <!-- Contributors -->
-    
-<!--
     <PreferenceCategory
         android:key="contributors"
         android:title="@string/contributors">
 
         <Preference
-            android:key="dragos281993"
-            android:icon="@drawable/ic_dragos"
-            android:title="@string/dragos"
-            android:summary="@string/dragos_sum"/>
-
-        <Preference
-            android:key="nitin.chobhe"
-            android:icon="@drawable/ic_nitin"
-            android:title="@string/nitin"
-            android:summary="@string/nitin_sum"/>
-
-        <Preference
-            android:key="sudokamikaze"
-            android:icon="@drawable/ic_sudo"
-            android:title="@string/sudo"
-            android:summary="@string/sudo_sum"/>
+            android:key="prstorero"
+            android:icon="@drawable/ic_prstorero"
+            android:title="@string/prstorero"
+            android:summary="@string/prstorero_sum"/>
 
     </PreferenceCategory>
--->
-
-    <!--PreferenceCategory
-        android:key="contributors"
-        android:title="@string/contributors">
-
-        <Preference
-            android:key="someone"
-            android:icon="@drawable/ic_someone"
-            android:title="@string/someone"
-            android:summary="@string/someone_sum"/>
-
-    </PreferenceCategory-->
 
 </PreferenceScreen>
 
