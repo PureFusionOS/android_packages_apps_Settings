@@ -60,7 +60,8 @@ public class About extends SettingsPreferenceFragment {
             builder.setItems(R.array.donate_entries, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     String [] donateValues = {"https://paypal.me/TheNebulaProject",
-					"https://paypal.me/tabp0le"};
+                                              "https://paypal.me/tabp0le",
+                                              "https://forum.xda-developers.com/donatetome.php?u=4837394"};
                     Intent link = new Intent(Intent.ACTION_VIEW);
                     String item = donateValues[which];
                     link.setData(Uri.parse(item));
@@ -128,6 +129,22 @@ public class About extends SettingsPreferenceFragment {
                     String [] prstoreroValues = {"https://forum.xda-developers.com/member.php?u=4255135"};
                     Intent link = new Intent(Intent.ACTION_VIEW);
                     String item = prstoreroValues[which];
+                    link.setData(Uri.parse(item));
+                    try {
+                        startActivity(link);
+                    } catch (android.content.ActivityNotFoundException e) {
+                    }
+                }
+            });
+            builder.show();
+        } else if (preference.getKey().equals("siankatabg")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle(R.string.sian_dialog);
+            builder.setItems(R.array.sian_entries, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    String [] sianValues = {"https://forum.xda-developers.com/member.php?u=4837394"};
+                    Intent link = new Intent(Intent.ACTION_VIEW);
+                    String item = sianValues[which];
                     link.setData(Uri.parse(item));
                     try {
                         startActivity(link);

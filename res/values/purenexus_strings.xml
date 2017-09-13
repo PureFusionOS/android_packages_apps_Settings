@@ -301,9 +301,10 @@
     <string name="fusion_github">PureFusionOS GitHub Source</string>
     <!-- donations -->
     <string name="fusion_donate">Donate to support development</string>
-    <string name="donate_dialog">Donate: Owner/Co-Owners</string>
+    <string name="donate_dialog">Donate: Developers </string>
     <string name="donate_elim">Eliminater74</string>
     <string name="donate_tab">tabp0le</string>
+    <string name="donate_sian">siankatabg</string>
     <!-- developer/contributors -->
     <string name="lead_dev">Lead developers</string>
     <string name="contributors">Team members</string>
@@ -319,6 +320,10 @@
     <string name="prstorero">prstorero</string>
     <string name="prstorero_sum">Developer</string>
     <string name="prstorero_dialog">Follow prstorero</string>
+    <!-- siankatabg -->
+    <string name="sian">siankatabg</string>
+    <string name="sian_sum">Developer/OP5 Maintainer</string>
+    <string name="sian_dialog">Follow siankatabg</string>
     <!-- possible profiles -->
     <string name="gplus">Google+</string>
     <string name="play_store">Play store</string>

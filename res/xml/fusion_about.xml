@@ -72,6 +72,12 @@
             android:title="@string/prstorero"
             android:summary="@string/prstorero_sum"/>
 
+        <Preference
+            android:key="siankatabg"
+            android:icon="@drawable/ic_sian"
+            android:title="@string/sian"
+            android:summary="@string/sian_sum"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

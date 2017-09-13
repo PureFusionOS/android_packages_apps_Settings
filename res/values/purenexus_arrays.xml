@@ -274,4 +274,10 @@
    <string-array name="prstorero_entries">
         <item>@string/xda</item>
    </string-array>
+
+   <!-- siankatabg profiles -->
+   <string-array name="sian_entries">
+        <item>@string/xda</item>
+   </string-array>
+
 </resources>
