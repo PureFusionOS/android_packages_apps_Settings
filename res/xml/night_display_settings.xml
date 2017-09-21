@@ -53,7 +53,7 @@
             android:defaultValue="0"
             android:entries="@array/night_brightness_value_entries"
             android:entryValues="@array/night_brightness_value_values"
-            android:key="qs_night_brightness_value"
+            android:key="night_brightness_value"
             android:title="@string/night_brightness_value_title" />
 
     </PreferenceCategory>
