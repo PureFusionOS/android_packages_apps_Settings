@@ -248,4 +248,7 @@
     <string name="doze_always_on_title">Always on</string>
     <string name="doze_always_on_summary">Allows your device to always display information without unlocking the screen</string>
 
+    <string name="battery_image">Battery image</string>
+    <string name="battery_image_description">Show battery image in status bar</string>
+
 </resources>
