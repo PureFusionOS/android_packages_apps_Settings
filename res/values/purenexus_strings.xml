@@ -33,7 +33,12 @@
     <!-- Developer options enabled by default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
-<!-- Sound & Notification Settings -->
+    <!-- Sound & Notification Settings -->
     <!-- Volume settings - Volume adjustment sound -->
     <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Prevent accidental wake up</string>
+    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
 </resources>
