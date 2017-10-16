@@ -26,7 +26,7 @@ import com.android.settings.core.PreferenceController;
 
 public class PureVersionPreferenceController extends PreferenceController {
 
-    private static final String PROPERTY_PURE_VERSION = "ro.pure.version";
+    private static final String PROPERTY_PURE_VERSION = "ro.fusion.version";
     private static final String KEY_PURE_VERSION = "pure_version";
 
     public PureVersionPreferenceController(Context context) {
@@ -54,4 +54,3 @@ public class PureVersionPreferenceController extends PreferenceController {
         }
     }
 }
-
