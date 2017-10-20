@@ -51,4 +51,8 @@
     <!-- About phone screen, SDCLANG Compiler  [CHAR LIMIT=40] -->
     <string name="build_compiler_sdclang">SDClang version</string>
 
+    <!-- Encryption and credential -->
+    <string name="custom_encryption_and_credential_settings_summary_on">Device is encrypted</string>
+    <string name="custom_encryption_and_credential_settings_summary_off">Device is decrypted</string>
+
 </resources>
