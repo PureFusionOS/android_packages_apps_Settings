@@ -49,7 +49,7 @@ public class GCCVersionPerferenceController extends PreferenceController {
         final Preference pref = screen.findPreference(KEY_MOD_BUILD_COMPILER_GCC);
         if (pref != null) {
             final String summary = SystemProperties.get(PROPERTY_MOD_BUILD_COMPILER_GCC,
-                    mContext.getResources().getString(R.string.build_compiler_gcc_default));
+                    mContext.getResources().getString(R.string.build_compiler_default));
             pref.setSummary(summary);
         }
     }

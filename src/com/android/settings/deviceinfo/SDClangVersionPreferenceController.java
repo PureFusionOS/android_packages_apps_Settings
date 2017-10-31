@@ -49,7 +49,7 @@ public class SDClangVersionPerferenceController extends PreferenceController {
         final Preference pref = screen.findPreference(KEY_MOD_BUILD_COMPILER_SDCLANG);
         if (pref != null) {
             final String summary = SystemProperties.get(PROPERTY_MOD_BUILD_COMPILER_SDCLANG,
-                    mContext.getResources().getString(R.string.build_compiler_sdclang_default));
+                    mContext.getResources().getString(R.string.build_compiler_default));
             pref.setSummary(summary);
         }
     }

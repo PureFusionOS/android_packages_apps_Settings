@@ -49,7 +49,7 @@ public class ClangVersionPerferenceController extends PreferenceController {
         final Preference pref = screen.findPreference(KEY_MOD_BUILD_COMPILER_CLANG);
         if (pref != null) {
             final String summary = SystemProperties.get(PROPERTY_MOD_BUILD_COMPILER_CLANG,
-                    mContext.getResources().getString(R.string.build_compiler_clang_default));
+                    mContext.getResources().getString(R.string.build_compiler_default));
             pref.setSummary(summary);
         }
     }
