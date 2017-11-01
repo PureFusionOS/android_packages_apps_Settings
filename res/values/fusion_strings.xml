@@ -163,4 +163,7 @@
     <string name="notification_volume_option_title">Notification volume</string>
     <string name="ring_notification_volume_option_title">Ring and notification volume</string>
 
+    <!-- Pixel color on sim card -->
+    <string name="default_sim_color">Pixel</string>
+
 </resources>
