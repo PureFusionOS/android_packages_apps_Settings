@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 AospExtended Rom
+ * Copyright (C) 2017 XenonHD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,29 @@
 
 package com.android.settings.fusion;
 
-import android.app.Fragment;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.internal.logging.nano.MetricsProto;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Changelog extends SettingsPreferenceFragment {
 
@@ -40,11 +47,17 @@ public class Changelog extends SettingsPreferenceFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
+
         InputStreamReader inputReader = null;
         String text = null;
+        StringBuilder data = new StringBuilder();
+
+        Pattern date = Pattern.compile("(={20}|\\d{4}-\\d{2}-\\d{2})");
+        Pattern commit = Pattern.compile("([a-f0-9]{7})");
+        Pattern committer = Pattern.compile("\\[(\\D.*?)]");
+        Pattern title = Pattern.compile("([\\*].*)");
 
         try {
-            StringBuilder data = new StringBuilder();
             char tmp[] = new char[2048];
             int numRead;
 
@@ -64,8 +77,30 @@ public class Changelog extends SettingsPreferenceFragment {
             }
         }
 
+        SpannableStringBuilder sb = new SpannableStringBuilder(data);
+        Matcher m = date.matcher(data);
+        while (m.find()){
+            sb.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.accent_device_default_light, getActivity().getTheme())), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.BOLD), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        }
+        m = commit.matcher(data);
+        while (m.find()){
+            sb.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.secondary_device_default_settings, getActivity().getTheme())), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.BOLD), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        }
+        m = committer.matcher(data);
+        while (m.find()){
+            sb.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.secondary_device_default_settings, getActivity().getTheme())), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.ITALIC), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        }
+        m = title.matcher(data);
+        while (m.find()){
+            sb.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.accent_device_default_light, getActivity().getTheme())), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(new StyleSpan(Typeface.BOLD), m.start(1), m.end(1), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        }
+
         final TextView textView = new TextView(getActivity());
-        textView.setText(text);
+        textView.setText(sb);
 
         final ScrollView scrollView = new ScrollView(getActivity());
         scrollView.addView(textView);
