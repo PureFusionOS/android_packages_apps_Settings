@@ -54,4 +54,9 @@
     <!-- About phone screen, OTA item label -->
     <string name="fusionupdate_settings_title">Pure Fusion System updates</string>
 
+    <!-- Reset battery stats -->
+    <string name="ok">Ok</string>
+    <string name="menu_stats_reset">Reset stats</string>
+    <string name="reset_stats_msg">Battery history stats are going to be reset</string>
+
 </resources>
