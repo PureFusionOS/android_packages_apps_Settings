@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 PureFusionOS
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+         http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="96.0"
+    android:viewportHeight="96.0"
+    android:tint="?android:attr/colorControlNormal">
 
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/ic_settings_fusion_alpha"
-    android:tint="?android:attr/colorControlNormal" />
+    <path
+        android:fillColor="#212121"
+        android:fillType="evenOdd"
+        android:pathData="M70.8,381.9c5.3,16.1,12.7,31.7,21.7,46.4l-25.9,29.4c-9,9.5-8,23.2,1.6,32.2l45,40.3c10.1,8.5,25.4,9.5,36,1.4
+l32.8-23.2c17,9,35,15.6,53.5,20.3l4.8,37.9c1.6,12.3,13.2,21.3,27,21.3h63.6c13.8,0,25.4-9,27-21.3l4.8-36.5
+c20.1-4.7,39.2-11.8,57.2-20.8l31.8,22.7c10.6,7.6,26,6.6,35.5-1.9l45-40.3c10.1-9,10.6-22.7,2.1-32.2L510,429.7
+c10.1-15.6,18-32.7,23.3-50.2l38.1-4.3c13.8-1.4,23.9-11.4,23.9-23.7v-57.3c0-11.8-10.1-22.3-23.9-23.7l-37.6-3.8
+c-4.8-17.5-12.7-34.6-22.3-50.2l22.8-26c8.5-9.5,7.4-23.2-2.1-31.7l-45-40.2c-9.5-9-24.9-9.5-35.5-1.9l-28.6,19.9
+c-18-9.5-37.6-17-58.3-21.8l-4.2-32.7c-1.6-12.3-13.2-21.3-27-21.3H270c-13.8,0-25.4,9-27,21.3l-4.2,32.7
+c-21.2,5.2-41.3,12.8-59.9,22.7l-29.7-20.8c-10.6-7.6-26-6.6-36,1.9l-45,40.2c-9.5,8.5-10.6,22.3-1.6,32.2l24.4,27.5
+c-10.1,16.1-17.5,32.7-22.3,50.2L29.5,273c-13.8,1.4-23.8,11.8-23.8,23.7v57.3c0,12.3,10.1,22.3,23.8,23.7L70.8,381.9z
+M300.2,129
+C421,129,519,216.1,519,324.1c0,108-98,195.6-218.8,195.6c-120.8,0-218.3-87.6-218.3-195.6C81.9,216.1,179.4,129,300.2,129
+L300.2,129z" />
+    <path
+        android:fillType="evenOdd"
+        android:pathData="M 153.3 223.7 H 462.6 V 425.1 H 153.3 V 223.7 Z" />
+</vector>
