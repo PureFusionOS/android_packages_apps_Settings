@@ -45,7 +45,7 @@ public class KernelVersionPreferenceController extends PreferenceController {
     @Override
     public void updateState(Preference preference) {
         super.updateState(preference);
-        preference.setSummary(getFullKernelVersion());
+        preference.setSummary(DeviceInfoUtils.getFormattedKernelVersion());
     }
 
     @Override
@@ -53,13 +53,24 @@ public class KernelVersionPreferenceController extends PreferenceController {
         return KEY_KERNEL_VERSION;
     }
 
+    @Override
+    public boolean handlePreferenceTreeClick(Preference preference) {
+        if (!TextUtils.equals(preference.getKey(), KEY_KERNEL_VERSION)) {
+            return false;
+        }
+        preference.setSummary(getFullKernelVersion());
+        return false;
+    }
+
     private String getFullKernelVersion() {
+        String procVersionStr;
         try {
-            return readLine(FILENAME_PROC_VERSION);
+            procVersionStr = readLine(FILENAME_PROC_VERSION);
+            return procVersionStr;
         } catch (IOException e) {
             Log.e(LOG_TAG,
             "IO Exception when getting kernel version for Device Info screen", e);
-            return DeviceInfoUtils.getFormattedKernelVersion();
+            return "Unavailable";
         }
     }
 
