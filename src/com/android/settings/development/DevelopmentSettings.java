@@ -191,8 +191,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String SELECT_LOGPERSIST_PROPERTY_SERVICE = "logcatd";
     private static final String SELECT_LOGPERSIST_PROPERTY_CLEAR = "clear";
     private static final String SELECT_LOGPERSIST_PROPERTY_STOP = "stop";
-    private static final String SELECT_LOGPERSIST_PROPERTY_BUFFER =
-            "persist.logd.logpersistd.buffer";
+    private static final String SELECT_LOGPERSIST_PROPERTY_BUFFER = "persist.logd.logpersistd.buffer";
     private static final String ACTUAL_LOGPERSIST_PROPERTY_BUFFER = "logd.logpersistd.buffer";
     private static final String ACTUAL_LOGPERSIST_PROPERTY_ENABLE = "logd.logpersistd.enable";
 
@@ -206,16 +205,11 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String FORCE_RESIZABLE_KEY = "force_resizable_activities";
     private static final String COLOR_TEMPERATURE_KEY = "color_temperature";
 
-    private static final String BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_KEY =
-            "bluetooth_disable_absolute_volume";
-    private static final String BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_PROPERTY =
-            "persist.bluetooth.disableabsvol";
-    private static final String BLUETOOTH_AVRCP_VERSION_PROPERTY =
-                                    "persist.bluetooth.avrcpversion";
-    private static final String BLUETOOTH_ENABLE_INBAND_RINGING_PROPERTY =
-                                    "persist.bluetooth.enableinbandringing";
-    private static final String BLUETOOTH_BTSNOOP_ENABLE_PROPERTY =
-                                    "persist.bluetooth.btsnoopenable";
+    private static final String BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_KEY = "bluetooth_disable_absolute_volume";
+    private static final String BLUETOOTH_DISABLE_ABSOLUTE_VOLUME_PROPERTY = "persist.bluetooth.disableabsvol";
+    private static final String BLUETOOTH_AVRCP_VERSION_PROPERTY = "persist.bluetooth.avrcpversion";
+    private static final String BLUETOOTH_ENABLE_INBAND_RINGING_PROPERTY = "persist.bluetooth.enableinbandringing";
+    private static final String BLUETOOTH_BTSNOOP_ENABLE_PROPERTY = "persist.bluetooth.btsnoopenable";
 
     private static final String BLUETOOTH_ENABLE_INBAND_RINGING_KEY = "bluetooth_enable_inband_ringing";
     private static final String BLUETOOTH_SELECT_AVRCP_VERSION_KEY = "bluetooth_select_avrcp_version";
@@ -227,8 +221,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final String INACTIVE_APPS_KEY = "inactive_apps";
 
-    private static final String IMMEDIATELY_DESTROY_ACTIVITIES_KEY
-            = "immediately_destroy_activities";
+    private static final String IMMEDIATELY_DESTROY_ACTIVITIES_KEY = "immediately_destroy_activities";
     private static final String APP_PROCESS_LIMIT_KEY = "app_process_limit";
 
     private static final String BACKGROUND_CHECK_KEY = "background_check";
@@ -353,8 +346,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
-    private final ArrayList<SwitchPreference> mResetSwitchPrefs
-            = new ArrayList<SwitchPreference>();
+    private final ArrayList<SwitchPreference> mResetSwitchPrefs = new ArrayList<SwitchPreference>();
 
     private final HashSet<Preference> mDisabledPrefs = new HashSet<Preference>();
     // To track whether a confirmation dialog was clicked.
@@ -394,8 +386,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         super.onCreate(icicle);
 
         mWindowManager = IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
-        mBackupManager = IBackupManager.Stub.asInterface(
-                ServiceManager.getService(Context.BACKUP_SERVICE));
+        mBackupManager = IBackupManager.Stub.asInterface(ServiceManager.getService(Context.BACKUP_SERVICE));
         mWebViewUpdateService = WebViewFactory.getUpdateService();
         mOemUnlockManager = (PersistentDataBlockManager) getActivity()
                 .getSystemService(Context.PERSISTENT_DATA_BLOCK_SERVICE);
@@ -593,7 +584,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             So, to be sure the automatic update function is really kept disabled, we are forcing it to disabled
             (it means we are enabling the "disable automatic ota" feature) at least once in the onCreate method.*/
         final ContentResolver cr = getActivity().getContentResolver();
-        if (!mOtaDisabledOnce && 
+        if (!mOtaDisabledOnce &&
                 (Settings.Global.getInt(cr, Settings.Global.OTA_DISABLE_AUTOMATIC_UPDATE, 0) != 1)) {
             Settings.Global.putInt(cr, Settings.Global.OTA_DISABLE_AUTOMATIC_UPDATE, 1);
             mOtaDisabledOnce = true;
