@@ -17,6 +17,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+        <!-- PureFusionOS Logo -->
+        <PreferenceScreen
+                android:key="fusion_logo"
+                android:layout="@layout/fusion_logo" />
+
         <!-- System update settings - launches activity
         <Preference android:key="additional_system_update_settings"
                     android:title="@string/additional_system_update_settings_list_item_title">
