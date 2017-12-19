@@ -30,20 +30,11 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </Preference> -->
 
-        <!-- PureFusionOTA -->
-        <Preference android:key="fusion_updates"
-                    android:title="@string/fusionupdate_settings_title"
-                    android:summary="@string/system_update_settings_list_item_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.fusion.ota"
-                    android:targetClass="com.fusion.ota.activities.MainActivity" />
-        </Preference>
-
         <!-- Changelog -->
         <Preference
             android:key="changelog"
             android:title="@string/changelog_title"
-	    android:summary="@string/changelog_summary"
+	          android:summary="@string/changelog_summary"
             android:fragment="com.android.settings.fusion.Changelog" />
 
         <!-- Device status - launches activity -->
